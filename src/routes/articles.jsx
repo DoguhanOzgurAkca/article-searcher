@@ -1,13 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { SearchedArticle } from "../components/SearchedArticle";
 
 export default function Articles() {
   const location = useLocation();
-  const article = location.state;
-  console.log(article);
+  const article = location.state[0];
+  const currentPage = location.state[1];
+
   return (
     <div>
-      <SearchedArticle article={article} />
+      <SearchedArticle article={article} currentPage={currentPage} />
     </div>
   );
 }

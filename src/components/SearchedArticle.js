@@ -1,14 +1,13 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export const SearchedArticle = ({ article }) => {
+export const SearchedArticle = ({ article, currentPage }) => {
   const navigate = useNavigate();
   const {
     headline: { main },
     _id,
     lead_paragraph,
     pub_date,
-    multimedia: url,
     web_url,
     abstract,
   } = article;
@@ -21,7 +20,7 @@ export const SearchedArticle = ({ article }) => {
       <article key={_id}>
         <button
           onClick={() => {
-            navigate("/");
+            navigate("/", { state: currentPage });
           }}
         >
           Go back to the results page.

@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-export const SearchedArticles = ({ articles }) => {
+import { Link } from "react-router-dom";
+export const SearchArticles = ({ articles, currentPage }) => {
   return (
     <section>
       {articles.map((article) => {
@@ -10,7 +10,7 @@ export const SearchedArticles = ({ articles }) => {
         } = article;
         return (
           <article key={_id}>
-            <Link to="/articles" state={article}>
+            <Link to="/articles" state={[article, currentPage]}>
               {main}
             </Link>
           </article>

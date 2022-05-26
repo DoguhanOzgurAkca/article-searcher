@@ -1,32 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Searchform } from "./components/searchform";
-import { SearchedArticles } from "./components/searchArticle";
-import { Link } from "react-router-dom";
+import { SearchArticles } from "./components/searchArticle";
+import { ArticleFetcher } from "./components/articleFetcher";
+import { PageButtons } from "./components/pageButtons";
+import { useLocation } from "react-router-dom";
 const App = () => {
+  const location = useLocation().state;
+  const newLocation = location === null ? 0 : location;
+  console.log(newLocation);
   const [articles, setArticles] = useState([]);
   const [term, setTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(newLocation);
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const res = await fetch(
-          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=miNIUI1JocvimuhhAiBOpnLxRRmpqba1`
-        );
-        const articles = await res.json();
-        console.log(articles.response.docs);
-        setArticles(articles.response.docs);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchArticles();
-  }, [term]);
-
+  ArticleFetcher(setArticles, term, currentPage);
   return (
     <div>
-      <Searchform searchText={(text) => setTerm(text)} />
-      <SearchedArticles articles={articles} />
+      <div>
+        <Searchform searchText={(text) => setTerm(text)} />
+        <SearchArticles articles={articles} currentPage={currentPage} />
+      </div>
+      <div>
+        <PageButtons
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      </div>
     </div>
   );
 };
