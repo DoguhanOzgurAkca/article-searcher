@@ -1,15 +1,19 @@
 import React from "react";
 
-export const PageButtons = ({ currentPage, setCurrentPage }) => {
+export const PageButtons = ({ page, setPage, setSearchParams }) => {
   const onNext = () => {
-    setCurrentPage(currentPage + 1);
+    setPage(page + 1);
+    console.log(page);
   };
   const onPrev = () => {
-    setCurrentPage(currentPage - 1);
+    setPage(page - 1);
   };
+
   return (
     <div>
-      <button onClick={onPrev}>prev page</button>
+      <button disabled={page === 0} onClick={onPrev}>
+        prev page
+      </button>
       <button onClick={onNext}>next page</button>
     </div>
   );
