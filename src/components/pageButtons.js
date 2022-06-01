@@ -9,11 +9,20 @@ export const PageButtons = ({ page, setPage }) => {
   };
 
   return (
-    <div>
-      <button disabled={page === 0} onClick={onPrev}>
-        prev page
+    <div className="inline-flex w-auto max-w-2xl">
+      <button
+        className="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-1 rounded-l mr-56 w-32 disabled:cursor-not-allowed"
+        disabled={page === 0}
+        onClick={onPrev}
+      >
+        Previous Page
       </button>
-      <button onClick={onNext}>next page</button>
+      <button
+        className="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-1 rounded-l ml-56 w-32"
+        onClick={onNext}
+      >
+        Next page
+      </button>
     </div>
   );
 };
