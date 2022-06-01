@@ -1,9 +1,8 @@
 import React from "react";
 
-export const PageButtons = ({ page, setPage, setSearchParams }) => {
+export const PageButtons = ({ page, setPage }) => {
   const onNext = () => {
     setPage(page + 1);
-    console.log(page);
   };
   const onPrev = () => {
     setPage(page - 1);

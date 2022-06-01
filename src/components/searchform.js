@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Searchform = ({ searchText, setSearchParams }) => {
+export const Searchform = ({ searchText }) => {
   const [text, setText] = useState();
 
   const handleSubmit = (e) => {

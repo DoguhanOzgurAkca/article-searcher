@@ -1,12 +1,6 @@
 import React from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const SearchedArticle = ({ article, currentPage }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const searchTerm = searchParams.get("term");
-  const searchPage = searchParams.get("page");
-  setSearchParams({ searchTerm, searchPage });
-
   const navigate = useNavigate();
   const {
     headline: { main },
@@ -16,10 +10,12 @@ export const SearchedArticle = ({ article, currentPage }) => {
     web_url,
     abstract,
   } = article;
+
   function dateSlicer(date) {
     const changedDate = date.slice(0, 9).replaceAll("-", ".");
     return changedDate;
   }
+
   return (
     <section>
       <article key={_id}>

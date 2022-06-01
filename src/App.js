@@ -1,5 +1,5 @@
 import React from "react";
-import { ArticleFetcher } from "./components/articleFetcher";
+import { ArticleFetcher } from "./components/mainArticleFetcher";
 import { QueryClientProvider, QueryClient } from "react-query";
 const queryClient = new QueryClient();
 

@@ -1,13 +1,6 @@
 import React from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
-
+import { ArticleLink } from "./articleLink";
 export const SearchArticles = ({ data, status }) => {
-  const navigate = useNavigate();
-  const goToArticle = () => {
-    navigate({
-      pathname: "/posts",
-    });
-  };
   if (status === "loading") {
     return <div>Loading...</div>;
   }
@@ -16,21 +9,7 @@ export const SearchArticles = ({ data, status }) => {
   }
   return (
     <section>
-      <div>
-        {data.map((article) => {
-          const {
-            headline: { main },
-            _id,
-          } = article;
-          return (
-            <article key={_id}>
-              <Link to="/home/articles" state={[article]}>
-                {main}
-              </Link>
-            </article>
-          );
-        })}
-      </div>
+      <ArticleLink data={data} />
     </section>
   );
 };

@@ -3,12 +3,10 @@ import { SearchedArticle } from "../components/SearchedArticle";
 
 export default function Articles() {
   const location = useLocation();
-  const article = location.state[0];
-  const currentPage = location.state[1];
-
+  const article = location.state;
   return (
     <div>
-      <SearchedArticle article={article} currentPage={currentPage} />
+      <SearchedArticle article={article} />
     </div>
   );
 }
