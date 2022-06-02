@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-export const Searchform = ({ searchText, setPage }) => {
+export const Searchform = ({ setTerm }) => {
   const [text, setText] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchText(text);
-    setPage(0);
+    setTerm(text);
   };
 
   return (

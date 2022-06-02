@@ -21,7 +21,7 @@ export const PageButtons = ({ page, setPage }) => {
         className="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-1 rounded-l ml-56 w-32"
         onClick={onNext}
       >
-        Next page
+        Next Page
       </button>
     </div>
   );

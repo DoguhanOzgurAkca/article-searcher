@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-export const SearchedArticle = ({ article, currentPage }) => {
+export const SearchedArticle = ({ article }) => {
   const navigate = useNavigate();
   const {
     headline: { main },
@@ -15,7 +15,6 @@ export const SearchedArticle = ({ article, currentPage }) => {
     const changedDate = date.slice(0, 9).replaceAll("-", ".");
     return changedDate;
   }
-
   return (
     <article key={_id}>
       <section className="w-auto max-w-2xl flex flex-wrap">
