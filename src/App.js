@@ -1,5 +1,5 @@
 import React from "react";
-import { ArticleFetcher } from "./components/mainArticleFetcher";
+import { MainFetcher } from "./components/MainFetcher";
 import { QueryClientProvider, QueryClient } from "react-query";
 const queryClient = new QueryClient();
 
@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <QueryClientProvider client={queryClient}>
-        <ArticleFetcher />
+        <MainFetcher />
       </QueryClientProvider>
     </div>
   );

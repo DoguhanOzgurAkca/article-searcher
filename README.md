@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# NYTimes article searcher
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NYTimes article searcher is an application that allows you to search for NYTimes articles.
 
-## Available Scripts
+## Features/Useage
 
-In the project directory, you can run:
+After searching for a article, it will show you a total of 10 articles per page.
+The previous button will be disabled for the first page.
+"Click for Breaking News!" button will take you to the homepage, basically resetting all the search parameters and showing most recently published news.
 
-### `npm start`
+## Libraries used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React router to navigate and carry data between pages and set search parameters.
+React query for pagination.
+Tailwing for styling.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Components
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ArticleLink.js is the component that maps through the data that we get from the API and puts out the search results.
+ClickedArticle.js is used by the Articles.jsx to show information about the article that was clicked on.
+fetchArticles.js is used for fetching data from the NYTimes API
+LatestArticleButton.js resets the search parameters and shows the latest news to user.
+MainFetcher.js is the main page that sets search terms, page numbers, search parameters and so on while hosting useQuery as well.
+pageButtons.js are buttons that allow user to go back and forth between pages of searched articles.
+searchArticle.js is the component that uses ArticleLink.js and LatestArticleButton, while handling the loading and error state.
+Searchform.js is hosts the form and the button used for search.

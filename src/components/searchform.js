@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-export const Searchform = ({ setTerm }) => {
+export const SearchForm = ({ setTerm }) => {
   const [text, setText] = useState();
-
+  //sets the term to text whenever the form is submitted
   const handleSubmit = (e) => {
     e.preventDefault();
     setTerm(text);

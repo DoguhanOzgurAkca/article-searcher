@@ -1,12 +1,13 @@
 import { useLocation } from "react-router-dom";
-import { SearchedArticle } from "../components/SearchedArticle";
+import { ClickedArticle } from "../components/ClickedArticle";
 
 export default function Articles() {
+  //puts the data of the article that user clicked to article
   const location = useLocation();
   const article = location.state;
   return (
     <div>
-      <SearchedArticle article={article} />
+      <ClickedArticle article={article} />
     </div>
   );
 }
