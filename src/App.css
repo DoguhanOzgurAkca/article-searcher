@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.grey {
+  color: #b9b5ba;
+}
+.dark-purple {
+  color: #68496e;
+}
+.white {
+  color: #ece6ed;
+}
+.pink {
+  color: #e3a1f0;
+}
+.black {
+  color: #6d6a6e;
+}

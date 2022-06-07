@@ -5,7 +5,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <div>
+    <div className="flex justify-center">
       <QueryClientProvider client={queryClient}>
         <MainFetcher />
       </QueryClientProvider>

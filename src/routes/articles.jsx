@@ -6,7 +6,7 @@ export default function Articles() {
   const location = useLocation();
   const article = location.state;
   return (
-    <div>
+    <div className="flex justify-center">
       <ClickedArticle article={article} />
     </div>
   );
